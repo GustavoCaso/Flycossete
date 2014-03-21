@@ -15,9 +15,9 @@
           .col-xs-12
             %nav
               %ul.main-nav
-                %li.products
-                  = link_to "Productos", "#"
-                  %ul.products_sub
+                %li
+                  = link_to "Productos", "#products", class: "heading"
+                  %ul.products
                     %li Jersey
                     %li Pantalones
                     %li Faldas
@@ -29,4 +29,4 @@
                 %li= link_to "Coleccion", "#"
                 %li= link_to "Nosotros", "#"
                 %li= link_to "Contacta", "#"
-    = yield
+      = yield

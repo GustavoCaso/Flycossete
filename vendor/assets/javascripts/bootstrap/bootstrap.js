@@ -8,5 +8,5 @@
 //=require ./modal.js
 //=require ./tab.js
 //=require ./collapse.js
-//=require ./popover.js
 //=require ./tooltip.js
+//=require ./popover.js

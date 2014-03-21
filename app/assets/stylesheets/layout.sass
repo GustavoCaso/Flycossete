@@ -1,32 +1,49 @@
-.logo
-  width: 364px
-  height: 138px
-  margin : 0 auto
-nav
-  text-align: center
-  .main-nav
-    list-style-type: none
-    li
-      float: left
-      width: 20%
-      margin-right: 5%
-      font-size: 36px
-      text-align: center
-      position: relative
-      ul.products
-        position: absolute
-        display: none
-        left: -41px
-        width: 1140px
-        list-style-type: none
-        height: 50px
-        background: rgba(246,239,241,1)
-        li
-          float: left
-          font-size: 14px
-          width: 10%
-          margin-right: 2%
-          text-align: center
-          line-height: 50px
+html, body
+  height: 100%
+
+  #wrap
+    min-height: 100%
+    height: auto
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px
+    /* Pad bottom by footer height */
+    padding: 0 0 130px
+    header
+      margin-bottom: 50px
+      .logo
+        width: 364px
+        height: 138px
+        margin : 0 auto
+      nav
+        text-align: center
+        .main-nav
+          list-style-type: none
+          li
+            float: left
+            width: 20%
+            margin-right: 5%
+            font-size: 36px
+            text-align: center
+            position: relative
+            ul.products
+              position: absolute
+              display: none
+              left: -41px
+              width: 1140px
+              list-style-type: none
+              height: 50px
+              background: rgba(246,239,241,1)
+              li
+                float: left
+                font-size: 14px
+                width: 10%
+                margin-right: 2%
+                text-align: center
+                line-height: 50px
+  /* Set the fixed height of the footer here */
+  footer
+    height: 226px
+    background: image-url('footer_background.png') no-repeat -331px
+    width: 100%
 
 

@@ -6,27 +6,32 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    .container
-      %header
-        .row
-          .col-xs-12
-            .logo
-              = link_to image_tag("flycosette_logo.png") , root_path
-          .col-xs-12
-            %nav
-              %ul.main-nav
-                %li
-                  = link_to "Productos", "#products", class: "heading"
-                  %ul.products
-                    %li Jersey
-                    %li Pantalones
-                    %li Faldas
-                    %li Camisas
-                    %li Camisetas
-                    %li Complementos
-                    %li Botas
-                    %li Outlet
-                %li= link_to "Coleccion", "#"
-                %li= link_to "Nosotros", "#"
-                %li= link_to "Contacta", "#"
-      = yield
+    #wrap
+      .container
+        %header
+          .row
+            .col-xs-12
+              .logo
+                = link_to image_tag("flycosette_logo.png") , root_path
+            .col-xs-12
+              %nav
+                %ul.main-nav
+                  %li
+                    = link_to "Productos", "#products", class: "heading"
+                    %ul.products
+                      %li Jersey
+                      %li Pantalones
+                      %li Faldas
+                      %li Camisas
+                      %li Camisetas
+                      %li Complementos
+                      %li Botas
+                      %li Outlet
+                  %li= link_to "Coleccion", "#"
+                  %li= link_to "Nosotros", "#"
+                  %li= link_to "Contacta", "#"
+        = yield
+    %footer
+      #copyright
+        Flycosette is trademark ©
+      #social

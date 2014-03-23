@@ -1,3 +1,5 @@
+@import 'variables'
+
 html, body
   height: 100%
 
@@ -8,14 +10,23 @@ html, body
     margin: 0 auto -60px
     /* Pad bottom by footer height */
     padding: 0 0 130px
+    .line
+      height: 10px
+      border-bottom: 1px solid rgba(246,228,234,1)
+      -webkit-box-shadow: 0px 7px 5px 0px rgba(249, 165, 195, 0.11)
+      -moz-box-shadow:    0px 7px 5px 0px rgba(249, 165, 195, 0.11)
+      box-shadow:         0px 7px 5px 0px rgba(249, 165, 195, 0.11)
+      position: relative
+      top: 178px
     header
       margin-bottom: 50px
       .logo
         width: 364px
         height: 138px
-        margin : 0 auto
+        margin : 20px auto
       nav
         text-align: center
+        font-family: $josefin_font
         .main-nav
           list-style-type: none
           li
@@ -25,6 +36,12 @@ html, body
             font-size: 36px
             text-align: center
             position: relative
+            a
+              text-decoration: none
+              width: 100%
+              display: inline-block
+              &:hover
+                @extend .current
             ul.products
               position: absolute
               display: none
@@ -35,15 +52,58 @@ html, body
               background: rgba(246,239,241,1)
               li
                 float: left
-                font-size: 14px
+                font-size: 18px
                 width: 10%
                 margin-right: 2%
                 text-align: center
                 line-height: 50px
   /* Set the fixed height of the footer here */
   footer
-    height: 226px
-    background: image-url('footer_background.png') no-repeat -331px
+    height: 131px
+    background: rgba(100,104,101,1)
     width: 100%
+    position: relative
+    #butter_fly
+      position: absolute
+      bottom: 45%
+      left: 23%
+    #copyright
+      color: white
+      font-family: $josefin_font
+      font-size: 24px
+      width: 357px
+      margin: 0 auto
+      padding-top: 90px
+    #social
+      position: absolute
+      top: 23%
+      left: 71%
+      color: white
+      font-size: 24px
+      font-family: $josefin_font
+      text-transform: uppercase
+      .social_icons
+        list-style-type: none
+        padding: 0
+        margin: 20px 0 0 0
+        li
+          float: left
+          margin-right: 10px
+          a
+            display: inline-block
+            background: image-url('social_sprite.png')
+            width: 32px
+            height: 30px
+          .facebook:hover
+            background-position: 0px 30px
+          .instagram
+            background-position: 64px 0
+            &:hover
+              background-position: 64px 30px
+          .twitter
+            background-position: 32px 0
+            &:hover
+              background-position: 32px 30px
+
 
 

@@ -7,12 +7,14 @@
     = csrf_meta_tags
   %body
     #wrap
+      .line
       .container
         %header
           .row
             .col-xs-12
               .logo
                 = link_to image_tag("flycosette_logo.png") , root_path
+          .row
             .col-xs-12
               %nav
                 %ul.main-nav
@@ -30,8 +32,20 @@
                   %li= link_to "Coleccion", "#"
                   %li= link_to "Nosotros", "#"
                   %li= link_to "Contacta", "#"
-        = yield
+      = yield
     %footer
+      #butter_fly
+        = image_tag('footer_butterfly.png')
       #copyright
-        Flycosette is trademark ©
+        Copyright © 2014. All rights reserved
       #social
+        SIGUENOS
+        %ul.social_icons
+          %li
+            %a.facebook{:href => "#"}
+          %li
+            %a.instagram{:href => "#"}
+          %li
+            %a.twitter{:href => "#"}
+
+

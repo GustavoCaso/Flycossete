@@ -31,21 +31,10 @@
                       %li Outlet
                   %li= link_to "Coleccion", "#"
                   %li= link_to "Nosotros", "#"
-                  %li= link_to "Contacta", contact_path
+                  %li= link_to "Contacta", contact_path, class: @action == "contacta" ? "current" : ""
       = yield
     %footer
-      #butter_fly
-        = image_tag('footer_butterfly.png')
-      #copyright
-        Copyright © 2014. All rights reserved
-      #social
-        SIGUENOS
-        %ul.social_icons
-          %li
-            %a.facebook{:href => "#"}
-          %li
-            %a.instagram{:href => "#"}
-          %li
-            %a.twitter{:href => "#"}
+      Copyright © 2014. All rights reserved
+
 
 

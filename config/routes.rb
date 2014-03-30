@@ -1,4 +1,6 @@
 Flycosette::Application.routes.draw do
+  resources :products
+
   root "static#index"
   get "/contact", to: 'static#contact', as: "contact"
   # The priority is based upon order of creation: first created -> highest priority.

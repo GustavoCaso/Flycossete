@@ -3,7 +3,7 @@
   %head
     %title Flycosette
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     #wrap
@@ -19,7 +19,7 @@
               %nav
                 %ul.main-nav
                   %li
-                    = link_to "Productos", "#products", class: "heading"
+                    = link_to "Productos", "", class: "heading"
                     %ul.products
                       %li Jersey
                       %li Pantalones
@@ -29,8 +29,8 @@
                       %li Complementos
                       %li Botas
                       %li Outlet
-                  %li= link_to "Coleccion", "#"
-                  %li= link_to "Nosotros", "#"
+                  %li= link_to "Coleccion", ""
+                  %li= link_to "Nosotros", ""
                   %li= link_to "Contacta", contact_path, class: @action == "contacta" ? "current" : ""
       = yield
     %footer

@@ -2,7 +2,27 @@ Flycosette::Application.routes.draw do
   resources :products
 
   root "static#index"
-  get "/contact", to: 'static#contact', as: "contact"
+
+  scope '/',  controller: :products do
+    get "pantalones"
+    get "jersey"
+    get "faldas"
+    get "camisas"
+    get "camisetas"
+    get "complementos"
+    get "botas"
+    get "outlet"
+  end
+
+  get "contact", to: 'static#contact', as: "contact"
+
+  get "us", to: 'static#us', as: "us"
+
+  get "admin", to: 'admin#index', as: "admin"
+
+  namespace :admin do
+    resources :products
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

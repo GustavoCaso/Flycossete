@@ -1,0 +1,11 @@
+.container
+  .col-xs-12
+    %ul.product_grid
+      - @products.each do |product|
+        %li
+          %figure
+            = image_tag(product.photo.url)
+          %figcaption
+            %h3= product.description
+            %p= product.price
+            = link_to "Detalles", product_path(product)

@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Flycosette
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #wrap
+      .line
+      .container
+        %header
+          .row
+            .col-xs-12
+              .logo
+                = link_to image_tag("flycosette_logo.png") , admin_path
+          .row
+            .col-xs-12
+              %nav
+                %ul.main-nav
+                  %li
+                    = link_to "Productos", admin_products_path
+
+        = yield

@@ -2,10 +2,15 @@ class StaticController < ApplicationController
 
 
   def index
+
   end
 
   def contact
-    @action = "contacta"
+    @action = "contact"
+  end
+
+  def us
+    @action = "us"
   end
 
 

@@ -19,19 +19,19 @@
               %nav
                 %ul.main-nav
                   %li
-                    = link_to "Productos", "", class: "heading"
+                    = link_to "Productos","", class: "heading"
                     %ul.products
-                      %li Jersey
-                      %li Pantalones
-                      %li Faldas
-                      %li Camisas
-                      %li Camisetas
-                      %li Complementos
-                      %li Botas
-                      %li Outlet
+                      %li= link_to "Jersey", jersey_path
+                      %li= link_to "Pantalones", pantalones_path
+                      %li= link_to "Faldas", faldas_path
+                      %li= link_to "Camisas", camisas_path
+                      %li= link_to "Camisetas", camisetas_path
+                      %li= link_to "Complementos", complementos_path
+                      %li= link_to "Botas", botas_path
+                      %li= link_to "Outlet", outlet_path
                   %li= link_to "Coleccion", ""
-                  %li= link_to "Nosotros", ""
-                  %li= link_to "Contacta", contact_path, class: @action == "contacta" ? "current" : ""
+                  %li= link_to "Nosotros", us_path, class: @action == "us" ? "current" : ""
+                  %li= link_to "Contacta", contact_path, class: @action == "contact" ? "current" : ""
       = yield
     %footer
       Copyright © 2014. All rights reserved

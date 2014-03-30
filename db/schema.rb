@@ -11,17 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328102244) do
+ActiveRecord::Schema.define(version: 20140330145822) do
 
   create_table "products", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.float    "price"
     t.string   "size"
-    t.integer  "stock",       default: 0
+    t.integer  "stock",              default: 0
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

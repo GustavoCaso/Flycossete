@@ -43,6 +43,8 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+      @sizes = @product.size.split(' ').map{|x| ["Talla: #{x}", x]}
     end
+
 
 end

@@ -1,0 +1,17 @@
+.product_show
+  .container
+    .row
+      .col-xs-6
+        = image_tag @product.photo.url
+      .col-xs-6
+        %h2= @product.name
+        %p= @product.description
+        .product_info
+          = form_tag line_items_path, method: :post do
+            = select_tag "size", options_for_select(@sizes), {:prompt => "--Selecciona Talla--"} if @sizes.length > 1
+            = hidden_field_tag "product_id", @product.id
+            = submit_tag "Añadir a Carrito"
+        = number_to_euro @product.price
+
+
+

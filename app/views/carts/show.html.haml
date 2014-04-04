@@ -2,10 +2,25 @@
   .container
     %h1 Carrito
     %table
-    - @cart.line_items.each do |line_item|
-      %li= line_item.product.name
+      - @cart.line_items.each do |line_item|
+        %tr
+          %td= image_tag line_item.product.photo.url(:thumb)
+          %td
+            %span= line_item.product.name
+            %p= line_item.product.short_description
+            %span
+            Talla:
+            = line_item.size
+          %td= number_to_euro line_item.product.price
+          %td= line_item.quantity
+          %td= number_to_euro line_item.total
+      %tr
+        %td
+        %td
+        %td
+        %td
+          Total:
+        %td
+          = number_to_euro @cart.total
 
 
-    = link_to 'Edit', edit_cart_path(@cart)
-    \|
-    = link_to 'Back', carts_path

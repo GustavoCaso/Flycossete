@@ -15,8 +15,10 @@
             .col-xs-12
               .logo
                 = link_to image_tag("flycosette_logo.png") , root_path
-                .shopping_cart
-                  = link_to (image_tag "shopping_cart.png"), cart_path(session[:cart_id]) unless session[:cart_id].blank?
+                - unless session[:cart_id].nil?
+                  .shopping_cart
+                    %span== (#{Cart.find(session[:cart_id]).amount_items})
+                    = link_to (image_tag "shopping_cart.png"), cart_path(session[:cart_id])
 
           .row
             .col-xs-12

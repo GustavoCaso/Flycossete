@@ -1,0 +1,10 @@
+%ul.product_grid
+  - products.each do |product|
+    -unless product.stock.zero?
+      %li
+        %figure
+          = image_tag(product.photo.url)
+        %figcaption
+          %h3= product.short_description
+          = number_to_euro product.price
+          = link_to "Detalles", product_path(product)

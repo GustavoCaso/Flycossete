@@ -15,8 +15,10 @@
             .col-xs-12
               .logo
                 = link_to image_tag("flycosette_logo.png") , root_path
-                .shopping_cart
-                  = link_to (image_tag "shopping_cart.png"), cart_path(session[:cart_id]) unless session[:cart_id].blank?
+                - unless session[:cart_id].nil?
+                  .shopping_cart
+                    %span== (#{Cart.find(session[:cart_id]).amount_items})
+                    = link_to (image_tag "shopping_cart.png"), cart_path(session[:cart_id])
 
           .row
             .col-xs-12
@@ -28,8 +30,8 @@
               %nav
                 %ul.main-nav
                   %li
-                    = link_to "Productos","", class: "heading"
-                    %ul.products
+                    = link_to "Productos","#", class: "heading"
+                    %ul.products{class: @current ? "active" : ""}
                       %li= link_to "Jersey", jersey_path
                       %li= link_to "Pantalones", pantalones_path
                       %li= link_to "Faldas", faldas_path

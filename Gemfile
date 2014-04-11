@@ -19,6 +19,9 @@ gem 'coffee-rails', '~> 4.0.0'
 #handling pictures
 gem "paperclip", "~> 4.1"
 
+#handling pay-pal
+gem 'paypal-sdk-merchant'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

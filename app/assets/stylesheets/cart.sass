@@ -10,14 +10,30 @@
       border-bottom: 1px solid white
       td
         color: rgba(121,121,121,1)
-      td:nth-child(2)
+      td:nth-child(1)
+        text-align: center
+        padding: 10
+
+      td:nth-child(3)
         span:nth-child(1)
           font-weight: 600
           color: darken(rgba(121,121,121,1), 30%)
-      td:nth-child(3), td:nth-child(4), td:nth-child(5)
+      td:nth-child(4), td:nth-child(5), td:nth-child(6)
         padding: 0 20px
     tr:last-child
       background: white
+      td:nth-child(5), td:nth-child(6)
+        font-size: 24px
+  .new_order
+    @include box(rgba(183,183,183,1), 18px)
+    &:hover
+      background: rgba(183,183,183,1)
+      color: white
+  .delete_cart
+    @include box(rgba(183,183,183,1), 14px)
+    &:hover
+      background: rgba(183,183,183,1)
+      color: white
 
 
 

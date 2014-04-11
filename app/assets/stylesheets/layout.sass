@@ -1,5 +1,6 @@
 @import 'variables'
-
+.active
+  display: block !important
 html, body
   height: 100%
 
@@ -30,6 +31,14 @@ html, body
           position: absolute
           left: 710px
           top: 10px
+          width: 19%
+          span
+            font-size: 18px
+            color: rgba(100,104,101,1)
+            height: 31px
+            line-height: 31px
+
+
       nav
         text-align: center
         font-family: $josefin_font
@@ -66,6 +75,7 @@ html, body
                 margin-right: 3%
                 text-align: center
                 line-height: 50px
+
   /* Set the fixed height of the footer here */
   footer
     text-align: center

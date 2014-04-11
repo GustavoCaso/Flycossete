@@ -1,4 +1,12 @@
 Flycosette::Application.routes.draw do
+  resources :orders do
+    collection do
+      get "notify_success"
+      get "notify_cancel"
+      post "notify"
+    end
+  end
+
   resources :line_items
 
   resources :carts

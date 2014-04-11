@@ -1,6 +1,12 @@
 class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
+
+
+  def amount_items
+    line_items.count
+  end
+
   def add_product product, size
     current_item = line_items.where(product_id: product.id).first
 
@@ -15,6 +21,6 @@ class Cart < ActiveRecord::Base
 
   def total
     line_items.to_a.sum(&:total)
-
   end
+
 end

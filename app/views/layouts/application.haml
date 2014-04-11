@@ -30,8 +30,8 @@
               %nav
                 %ul.main-nav
                   %li
-                    = link_to "Productos","", class: "heading"
-                    %ul.products
+                    = link_to "Productos","#", class: "heading"
+                    %ul.products{class: @current ? "active" : ""}
                       %li= link_to "Jersey", jersey_path
                       %li= link_to "Pantalones", pantalones_path
                       %li= link_to "Faldas", faldas_path

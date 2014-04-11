@@ -27,6 +27,11 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     product = Product.find(params[:product_id])
+
+    if params[:size].blank?
+      redirect_to product, notice: "Tienes que seleccionar una talla"
+      return
+    end
     @line_item = @cart.add_product(product, params[:size])
     respond_to do |format|
       if @line_item.save

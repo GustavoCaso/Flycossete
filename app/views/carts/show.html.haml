@@ -28,7 +28,7 @@
         %td
           = number_to_euro @cart.total
     = link_to "Vaciar Carrito", @cart, method: :delete, data: {confirm: "¿ Estas seguro de querer borrar el carrito ?"}, class: "delete_cart"
-    = link_to "Realizar Pedido", "#", class: "new_order pull-right"
+    = link_to "Realizar Pedido", new_order_path, class: "new_order pull-right"
 
 
 

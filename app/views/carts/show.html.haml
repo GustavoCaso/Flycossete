@@ -1,34 +1,8 @@
-.cart_show
-  .container
-    %h1 Carrito
-    %table
-      - @cart.line_items.each do |line_item|
-        %tr
-          %td
-            = link_to "Borrar", line_item, :method => :delete, :data => { :confirm => '¿ Seguro que quieres borrar el item ?' }
-
-
-          %td= image_tag line_item.product.photo.url(:thumb)
-          %td
-            %span= line_item.product.name
-            %p= line_item.product.short_description
-            %span
-              Talla:
-              = line_item.size
-          %td= number_to_euro line_item.product.price
-          %td= line_item.quantity
-          %td= number_to_euro line_item.total
-      %tr
-        %td
-        %td
-        %td
-        %td
-        %td
-          Total:
-        %td
-          = number_to_euro @cart.total
-    = link_to "Vaciar Carrito", @cart, method: :delete, data: {confirm: "¿ Estas seguro de querer borrar el carrito ?"}, class: "delete_cart"
-    = link_to "Realizar Pedido", new_order_path, class: "new_order pull-right"
+.container
+  %h1 Carrito
+  = render 'cart'
+  = link_to "Vaciar Carrito", @cart, method: :delete, data: {confirm: "¿ Estas seguro de querer borrar el carrito ?"}, class: "delete_cart"
+  = link_to "Realizar Pedido", new_order_path, class: "order_new pull-right"
 
 
 

@@ -1,0 +1,35 @@
+%table.cart_table
+  - @cart.line_items.each do |line_item|
+    %tr
+      %td
+        = link_to "X", line_item, :method => :delete, :data => { :confirm => '¿ Seguro que quieres borrar el item ?' }, class: "delete_item"
+
+
+      %td= image_tag line_item.product.photo.url(:thumb)
+      %td
+        %span= line_item.product.name
+        %p= line_item.product.short_description
+        %span
+          Talla:
+          = line_item.size
+      %td= number_to_euro line_item.product.price
+      %td= line_item.quantity
+      %td= number_to_euro line_item.total
+  %tr.gastos_envio
+    %td
+    %td
+    %td
+    %td
+    %td
+      Gastos de Envio:
+    %td
+      = number_to_euro Order::SHIPPING_PRICE
+  %tr.total_order
+    %td
+    %td
+    %td
+    %td
+    %td
+      Total:
+    %td
+      = number_to_euro @cart.total + Order::SHIPPING_PRICE

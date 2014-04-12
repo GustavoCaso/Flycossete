@@ -1,28 +1,29 @@
-= form_for @order do |f|
-  - if @order.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
-      %ul
-        - @order.errors.full_messages.each do |msg|
-          %li= msg
+#form
+  = form_for @order do |f|
+    - if @order.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+        %ul
+          - @order.errors.full_messages.each do |msg|
+            %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :address
-    = f.text_area :address
-  .field
-    = f.label :post_code
-    = f.text_field :post_code
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :email_confirmation
-    = f.text_field :email_confirmation
-  .field
-    = f.submit 'Save'
+    .field
+      = f.label :name, "Nombre"
+      = f.text_field :name
+    .field
+      = f.label :address, "Direccion"
+      = f.text_field :address
+    .field
+      = f.label :post_code, "Codigo Postal"
+      = f.text_field :post_code
+    .field
+      = f.label :city, "Ciudad"
+      = f.text_field :city
+    .field
+      = f.label :email, "Email"
+      = f.text_field :email
+    .field
+      = f.label :email_confirmation, "Confirmación Email"
+      = f.text_field :email_confirmation
+    .field
+      = f.submit 'Siguiente Paso'

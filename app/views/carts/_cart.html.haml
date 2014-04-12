@@ -1,10 +1,11 @@
-%table.cart_table
+%table.cart_table{class: @small == true ? "small" : ""}
   - @cart.line_items.each do |line_item|
     %tr
-      %td
-        = link_to "X", line_item, :method => :delete, :data => { :confirm => '¿ Seguro que quieres borrar el item ?' }, class: "delete_item"
-
-
+      -unless @small
+        %td
+          = link_to "X", line_item, :method => :delete, :data => { :confirm => '¿ Seguro que quieres borrar el item ?' }, class: "delete_item"
+      - if @small
+        %td
       %td= image_tag line_item.product.photo.url(:thumb)
       %td
         %span= line_item.product.name

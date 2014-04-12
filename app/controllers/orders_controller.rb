@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
       return
     end
     @order = Order.new
+    @small = true
   end
 
 

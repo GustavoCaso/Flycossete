@@ -1,0 +1,8 @@
+.container
+  %h1 Eventos Flycosette
+
+  - @events.each do |event|
+    %p= event.start_date.strftime("%b-%d-%Y")
+    = image_tag event.photo.url, class: "img-responsive"
+    %h1= link_to event.short_description, event_path(event)
+

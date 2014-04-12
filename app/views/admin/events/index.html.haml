@@ -1,0 +1,23 @@
+.container
+  %h1 Eventos Flycossete
+
+  %table
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @events.each do |event|
+    %tr
+      %td= event.name
+      %td= event.description
+      %td= link_to 'Show', [:admin, event]
+      %td= link_to 'Edit', edit_admin_event_path(event)
+      %td= link_to 'Destroy', [:admin, event], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Event', new_admin_event_path
+

@@ -1,4 +1,6 @@
 Flycosette::Application.routes.draw do
+
+
   resources :orders do
     collection do
       get "notify_success"
@@ -12,6 +14,8 @@ Flycosette::Application.routes.draw do
   resources :carts
 
   resources :products
+
+  resources :events
 
   root "static#index"
 
@@ -34,6 +38,7 @@ Flycosette::Application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :events
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

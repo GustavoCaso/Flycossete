@@ -38,12 +38,10 @@
         font-size: 24px
         font-family: $josefin_font
       a
-        @include box(rgba(107,111,108,1), 24px)
-
+        @include box(white, none, 24px)
         &:hover
-          background: white
-          color: rgba(154,156,155,0.8)
-          border: 2px solid white
+          color: rgba(160,167,169,1)
+
 
   li:hover figcaption
     opacity: 1
@@ -73,16 +71,13 @@
         background: rgba(183,183,183,1)
         color: white
     input[type=submit]
-      @include box(rgba(183,183,183,1), 24px)
+      @include box(rgba(183,183,183,1), white, 24px)
       display: block
       width: 300px
       height: 71px
       margin: 20px auto
       background: white
       border-radius: 5px
-      &:hover
-        background: rgba(183,183,183,1)
-        color: white
   .euros
     font-size: 20px
     text-align: center

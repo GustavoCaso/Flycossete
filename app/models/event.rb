@@ -6,4 +6,8 @@ class Event < ActiveRecord::Base
     }
 
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+  def fecha
+    start_date.strftime("%Y-%B-%d")
+  end
 end

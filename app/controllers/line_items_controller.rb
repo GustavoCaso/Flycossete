@@ -29,13 +29,13 @@ class LineItemsController < ApplicationController
     product = Product.find(params[:product_id])
 
     if params[:size].blank?
-      redirect_to product, notice: "Tienes que seleccionar una talla"
+      redirect_to product, alert: "Tienes que seleccionar una talla"
       return
     end
     @line_item = @cart.add_product(product, params[:size])
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to product, notice: 'Product añadido a carrito' }
+        format.html { redirect_to product, notice: 'Producto añadido a carrito' }
       else
         format.html { render action: 'new' }
       end

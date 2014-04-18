@@ -33,8 +33,8 @@ $text-color:            $gray-dark !default;
 // Links
 // -------------------------
 
-$link-color:            $brand-primary !default;
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-color:            rgba(125,126,126,1);
+$link-hover-color:      rgba(255,123,164,1) !default;
 
 // Typography
 // -------------------------

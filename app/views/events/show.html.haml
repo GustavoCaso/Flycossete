@@ -1,12 +1,5 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @event.name
-%p
-  %b Description:
-  = @event.description
-
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+.event_show
+  .container
+    = image_tag @event.photo.url, class: "img-responsive"
+    %p= @event.fecha
+    %p= @event.description

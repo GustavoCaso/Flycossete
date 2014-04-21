@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700);
+
 //
 // Variables
 // --------------------------------------------------
@@ -38,8 +40,7 @@ $link-hover-color:      rgba(255,123,164,1) !default;
 
 // Typography
 // -------------------------
-
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "Josefin Sans", sans-serif, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;

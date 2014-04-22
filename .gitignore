@@ -7,8 +7,7 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore paypal config
-/config/paypal.yml
+
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

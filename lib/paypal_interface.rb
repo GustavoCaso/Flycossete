@@ -3,9 +3,10 @@ require 'paypal-sdk-merchant'
 class PaypalInterface
 
   attr_reader :api, :express_checkout_response
+
   if Rails.env.eql?("development")
     PayPal::SDK.configure(
-        :mode      => "sandbox",  # Set "live" for production
+        :mode      => "sandbox",
         :app_id    => "APP-80W284485P519543T",
         :username  => "jb-us-seller_api1.paypal.com",
         :password  => "WX4WTU3S8MY44S7F",

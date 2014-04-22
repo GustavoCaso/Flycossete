@@ -3,7 +3,21 @@ require 'paypal-sdk-merchant'
 class PaypalInterface
 
   attr_reader :api, :express_checkout_response
-
+  if Rails.env.eql?("development")
+    PayPal::SDK.configure(
+        :mode      => "sandbox",  # Set "live" for production
+        :app_id    => "APP-80W284485P519543T",
+        :username  => "jb-us-seller_api1.paypal.com",
+        :password  => "WX4WTU3S8MY44S7F",
+        :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy")
+  else
+    PayPal::SDK.configure(
+        :mode      => "live",
+        :app_id    => ENV['APP_ID'],
+        :username  => ENV['USERNAME'],
+        :password  => ENV['PASSWORD'],
+        :signature => ENV['SIGNATURE'] )
+  end
 
   HOST = Rails.env.eql?("development") ? "http://localhost:3000" : "http://www.flycosette.es"
 
@@ -12,13 +26,6 @@ class PaypalInterface
   PAYPAL_NOTIFY_URL = Rails.application.routes.url_helpers.notify_orders_url(host: HOST)
 
   def initialize(order)
-    PayPal::SDK.configure(
-      :mode      => "live",  # Set "live" for production
-      :app_id    => ENV['APP_ID'],
-      :username  => ENV['USERNAME'],
-      :password  => ENV['PASSWORD'],
-      :signature => ENV['SIGNATURE'] )
-
     @api = PayPal::SDK::Merchant::API.new
     @order = order
     @line_items = @order.line_items

@@ -21,5 +21,12 @@ module Flycosette
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{config.root}/lib)
+
+    env_file = File.join(Rails.root, 'config', 'env_variables.yml')
+
+    Yaml.load(File.open(env_file)).each do |key,value|
+        ENV[key.to_s] = value
+    end if File.exits?(env_file)
+
   end
 end

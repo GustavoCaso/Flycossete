@@ -4,21 +4,13 @@ class PaypalInterface
 
   attr_reader :api, :express_checkout_response
 
-  if Rails.env.eql?("development")
-    PayPal::SDK.configure(
-        :mode      => "sandbox",
-        :app_id    => "APP-80W284485P519543T",
-        :username  => "jb-us-seller_api1.paypal.com",
-        :password  => "WX4WTU3S8MY44S7F",
-        :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy")
-  else
-    PayPal::SDK.configure(
-        :mode      => "live",
-        :app_id    => ENV['APP_ID'],
-        :username  => ENV['USERNAME'],
-        :password  => ENV['PASSWORD'],
-        :signature => ENV['SIGNATURE'] )
-  end
+  PayPal::SDK.configure(
+      :mode      => ENV['MODE'],
+      :app_id    => ENV['APP_ID'],
+      :username  => ENV['USERNAME'],
+      :password  => ENV['PASSWORD'],
+      :signature => ENV['SIGNATURE'] )
+
 
   HOST = Rails.env.eql?("development") ? "http://localhost:3000" : "http://www.flycosette.es"
 

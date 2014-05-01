@@ -9,6 +9,6 @@ class OrderMailer < ActionMailer::Base
   def no_stock(product, size)
     @product = product
     @size = size
-    mail(to: "info@flycosette.com", subject: "Producto sin stock")
+    mail(to: "flycosette@gmail.com", subject: "Producto sin stock")
   end
 end

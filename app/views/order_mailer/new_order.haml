@@ -1,0 +1,17 @@
+%p
+  == Gracias #{@order.name} por confiar en Flycosette.
+%p
+  Tu nuevo pedido sera enviado a la siguiente dirección.
+%p
+  = @order.full_address
+
+
+%p
+  Tu pedido consta de
+%ul
+- @order.line_items.each do |line_item|
+  %li{style: "list-style-type:none;"}
+    = line_item.product.name
+    Talla:
+    = line_item.size
+%p Muchas Gracias.

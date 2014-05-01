@@ -45,6 +45,17 @@ Flycosette::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      user_name:            ENV["GOOGLE_USERNAME"],
+      password:             ENV["GOOGLE_PASSWORD"],
+      authentication:       'plain',
+      enable_starttls_auto: true  }
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

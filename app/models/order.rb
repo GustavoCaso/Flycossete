@@ -7,6 +7,10 @@ class Order < ActiveRecord::Base
 
   SHIPPING_PRICE = 7
 
+  def full_address
+    "#{address} #{city} #{post_code}"
+  end
+
   def total
     line_items.to_a.sum(&:total)
   end
@@ -22,6 +26,9 @@ class Order < ActiveRecord::Base
       l = line_item.product
       l.stock -= line_item.quantity
       l.save!
+      if l.stock == 0
+        OrderMailer.no_stock(l, l.size).deliver
+      end
     end
   end
 

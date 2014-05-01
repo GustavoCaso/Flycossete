@@ -40,7 +40,7 @@
                       %li= link_to "Complementos", complementos_path
                       %li= link_to "Botas", botas_path
                       %li= link_to "Outlet", outlet_path
-                  %li= link_to "Eventos", events_path
+                  %li= link_to "Eventos", events_path, class: @action == "events" ? "current" : ""
                   %li= link_to "Nosotros", us_path, class: @action == "us" ? "current" : ""
                   %li= link_to "Contacta", contact_path, class: @action == "contact" ? "current" : ""
       = yield

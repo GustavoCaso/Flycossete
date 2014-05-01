@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
     @order = Order.where(token: params[:token]).first
     @order.update_attribute(:payer_id, params[:PayerID])
     @paypal = PaypalInterface.new(@order)
+    OrderMailer.new_order(@order).deliver
     @paypal.do_express_checkout
     Cart.find(session[:cart_id]).destroy
     session[:cart_id] = nil

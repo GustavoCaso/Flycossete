@@ -24,7 +24,7 @@
   = @product.category
 %p
   %b Foto:
-  = image_tag @product.photo.url
+  = image_tag @product.photo.url(:thumb)
 
 = link_to 'Edit', edit_admin_product_path(@product)
 \|

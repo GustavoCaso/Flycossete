@@ -1,5 +1,9 @@
-%h1 New product
+.container
+  .pull-right
+    = link_to 'Atras', admin_products_path, class: "admin_link"
 
-= render 'form'
+  %h1 Nuevo Producto
 
-= link_to 'Back', admin_products_path
+  = render 'form'
+
+

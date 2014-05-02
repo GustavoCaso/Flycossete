@@ -1,7 +1,9 @@
-%h1 Editing product
+.container
+  .pull-right
+    = link_to 'Ver', [:admin, @product], class: "admin_link"
+    = link_to 'Atras', admin_products_path, class: "admin_link"
+  %h1== Editando #{@product.name}
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', [:admin, @product]
-\|
-= link_to 'Back', admin_products_path
+

@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 #handling pictures
 gem "paperclip", "~> 4.1"
+gem 'aws-sdk'
 
 #handling pay-pal
 gem 'paypal-sdk-merchant'
@@ -39,6 +40,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

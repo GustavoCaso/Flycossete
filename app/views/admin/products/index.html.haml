@@ -1,29 +1,33 @@
-%h1 Listing products
+.admin_product
 
-%table
-  %tr
-    %th Name
-    %th Description
-    %th Price
-    %th Size
-    %th Stock
-    %th Category
-    %th
-    %th
-    %th
+  %h1 Listado Productos
 
-  - @products.each do |product|
+  %table.table
     %tr
-      %td= product.name
-      %td= product.description
-      %td= product.price
-      %td= product.size
-      %td= product.stock
-      %td= product.category
-      %td= link_to 'Show', [:admin, product]
-      %td= link_to 'Edit', edit_admin_product_path(product)
-      %td= link_to 'Destroy', [:admin, product], :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Nombre
+      %th Descripcion
+      %th Precio
+      %th Tallas
+      %th Stock
+      %th Categoria
+      %th
+      %th
+      %th
 
-%br
+    - @products.each do |product|
+      %tr
+        %td= product.name
+        %td= product.description
+        %td
+          = product.price
+          €
+        %td= product.size
+        %td= product.stock
+        %td= product.category
+        %td= link_to 'Ver', [:admin, product]
+        %td= link_to 'Editar', edit_admin_product_path(product)
+        %td= link_to 'Destruir', [:admin, product], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Product', new_admin_product_path
+  %br
+
+  = link_to 'Nuevo Producto', new_admin_product_path, class: "admin_link"

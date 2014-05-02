@@ -1,6 +1,7 @@
 Flycosette::Application.routes.draw do
 
 
+  devise_for :users
   resources :orders do
     collection do
       get "notify_success"
@@ -39,6 +40,7 @@ Flycosette::Application.routes.draw do
   namespace :admin do
     resources :products
     resources :events
+    resources :users
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

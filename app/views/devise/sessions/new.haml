@@ -1,0 +1,17 @@
+.container{style: "text-align:center;"}
+  #form_register
+    %h2 Registrate
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :username, "Usuario"
+        = f.text_field :username, autofocus: true
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: "off"
+      - if devise_mapping.rememberable?
+        %div
+          = f.check_box :remember_me
+          = f.label :remember_me, "Recuerdame"
+      .actions
+        = f.submit "Conectarse"
+    = render "devise/shared/links"

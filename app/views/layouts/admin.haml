@@ -20,6 +20,11 @@
                 %ul.main-nav
                   %li
                     = link_to "Productos", admin_products_path
+                  %li
                     = link_to "Eventos", admin_events_path
+                  %li
+                    = link_to "Usuarios", admin_users_path
+                  %li
+                    = link_to "Desconectar", destroy_user_session_path, method: :delete
 
         = yield

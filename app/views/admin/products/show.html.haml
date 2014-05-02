@@ -1,31 +1,35 @@
-%p#notice= notice
+.container
+  .pull-right
+    = link_to 'Editar', edit_admin_product_path(@product), class: "admin_link"
+    = link_to 'Listado', admin_products_path, class: "admin_link"
+  .row
+    .col-xs-6
+      .product_image_admin
+        = image_tag @product.photo.url(:medium)
+    .col-xs-6
+      .product_info_admin
+        %p
+          %b Nombre:
+          = @product.name
+        %p
+          %b Descripcion:
+          = @product.description
+        %p
+          %b Descrición corta:
+          = @product.short_description
+        %p
+          %b Precio:
+          = @product.price
+          €
+        %p
+          %b Tallas:
+          = @product.size
+        %p
+          %b Stock:
+          = @product.stock
+        %p
+          %b Categoria:
+          = @product.category
 
-%p
-  %b Name:
-  = @product.name
-%p
-  %b Description:
-  = @product.description
-%p
-  %b Short Description
-  = @product.short_description
-%p
-  %b Price:
-  = @product.price
-  €
-%p
-  %b Size:
-  = @product.size
-%p
-  %b Stock:
-  = @product.stock
-%p
-  %b Category:
-  = @product.category
-%p
-  %b Foto:
-  = image_tag @product.photo.url(:thumb)
 
-= link_to 'Edit', edit_admin_product_path(@product)
-\|
-= link_to 'Back', admin_products_path
+

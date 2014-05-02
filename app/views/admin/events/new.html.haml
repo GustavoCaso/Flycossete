@@ -1,5 +1,9 @@
-%h1 New event
+.container
+  .pull-right
+    = link_to 'Back', admin_events_path, class: "admin_link"
+
+%h1 Nuevo Evento
 
 = render 'form'
 
-= link_to 'Back', admin_events_path
+

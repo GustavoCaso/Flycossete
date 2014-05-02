@@ -1,12 +1,16 @@
-%p#notice= notice
+.container
+  .pull-right
+    = link_to 'Edit', edit_admin_event_path(@event), class: "admin_link"
+    = link_to 'Back', admin_events_path, class: "admin_link"
+  .row
+    .col-xs-12
+      = image_tag @event.photo.url(:medium)
+    .col-xs-12.text-center
+      %p
+        %b Nombre:
+        = @event.name
+      %p
+        %b Descripcion:
+        = @event.description
 
-%p
-  %b Name:
-  = @event.name
-%p
-  %b Description:
-  = @event.description
 
-= link_to 'Edit', edit_admin_event_path(@event)
-\|
-= link_to 'Back', admin_events_path

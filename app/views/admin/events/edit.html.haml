@@ -1,7 +1,9 @@
-%h1 Editing event
+.container
+  .pull-right
+    = link_to 'Ver', [:admin, @event], class: "admin_link"
+    = link_to 'Atras', admin_events_path, class: "admin_link"
+%h1== Editando #{@event.name}
 
 = render 'form'
 
-= link_to 'Show', [:admin, @event]
-\|
-= link_to 'Back', admin_events_path
+

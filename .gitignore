@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-/config/env_variables.yml
 
 
 # Ignore the default SQLite database.
@@ -16,3 +15,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+
+/config/env_variables.yml

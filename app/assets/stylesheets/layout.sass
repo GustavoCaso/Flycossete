@@ -94,6 +94,26 @@ html, body
   footer
     font-family: $helvetica
     text-align: center
-
-
-
+    .social_icons
+      margin-top: -30px
+      ul
+        list-style: none
+        li
+          float: left
+          margin-right: 10px
+          a
+            display: block
+            width: 35px
+            height: 38px
+            &.facebook
+              background: image-url("social_sprite_2.png") -35px 0 no-repeat
+              &:hover
+                background-position: -35px -38px
+            &.twitter
+              background: image-url("social_sprite_2.png") -70px 0 no-repeat
+              &:hover
+                background-position: -70px -38px
+            &.instagram
+              background: image-url("social_sprite_2.png") 0 0 no-repeat
+              &:hover
+                background-position: 0 -38px

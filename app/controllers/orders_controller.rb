@@ -17,7 +17,6 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-
     @order = Order.new(order_params)
     if @order.save
       @order.add_line_items_from_cart(@cart)
@@ -40,6 +39,7 @@ class OrdersController < ApplicationController
   def notify_success
     @order = Order.where(token: params[:token]).first
     @order.update_attribute(:payer_id, params[:PayerID])
+    Client.create(name: @order.name, email: @order.email)
     @paypal = PaypalInterface.new(@order)
     OrderMailer.new_order(@order).deliver
     @paypal.do_express_checkout
@@ -51,7 +51,14 @@ class OrdersController < ApplicationController
   end
 
   def notify
+    @api = PayPal::SDK::Merchant.new
+    if @api.ipn_valid?(request.raw_post)  # return true or false
+      order = Order.where(payer_id: params[:payer_id]).first
+      order.receipt_id = params[:receipt_id]
+      order.save
+    end
 
+    render nothing: true
   end
 
 

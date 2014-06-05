@@ -12,6 +12,12 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   validates_numericality_of :stock, {greater_than_or_equal_to: 0}
+  validates_presence_of :name, message: "Nombre no puede estar en blanco"
+  validates_presence_of :description, message: "Descripción no puede estar en blanco"
+  validates_presence_of :short_description, message: "Descripción corta no puede estar en blanco"
+  validates_presence_of :category, message: "Categoria no puede estar en blanco"
+  validates_presence_of :price, message: "Precio no puede estar en blanco"
+  validates_presence_of :size, message: "Talla no puede estar en blanco"
 
   CATEGORY = ["Jersey", "Pantalones", "Faldas", "Camisas", "Camisetas", "Complementos", "Botas", "Outlet"]
 

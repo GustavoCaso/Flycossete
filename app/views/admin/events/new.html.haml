@@ -1,9 +1,9 @@
 .container
+  .info.text-center
+    %p.alert-info{style: "border-radius: 5px;  display: inline-block; padding: 10px;"} Recuerda las Fotos tiene que ser de 1140px X 250px
   .pull-right
     = link_to 'Back', admin_events_path, class: "admin_link"
 
-%h1 Nuevo Evento
+  %h1 Nuevo Evento
 
-= render 'form'
-
-
+  = render 'form'

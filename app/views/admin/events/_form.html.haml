@@ -1,26 +1,27 @@
-#form_admin
-  = form_for [:admin, @event] do |f|
-    - if @event.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
-        %ul
-          - @event.errors.full_messages.each do |msg|
-            %li= msg
+.col-xs-12
+  #form_admin
+    = form_for [:admin, @event] do |f|
+      - if @event.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@event.errors.count, "error")} no permiten guardar este evento:"
+          %ul
+            - @event.errors.full_messages.each do |msg|
+              %li= msg
 
-    .field
-      = f.label :name, "Nombre"
-      = f.text_field :name
-    .field
-      = f.label :short_description, "Descripcion corta"
-      = f.text_area :short_description
-    .field
-      = f.label :description, "Descripcion Larga"
-      = f.text_area :description
-    .field
-      = f.label :start_date , "Fecha Comienzo"
-      = f.date_field :start_date
-    .field
-      = f.label :photo, "Foto"
-      = f.file_field :photo
-    .actions
-      = f.submit 'Crear'
+      .field
+        = f.label :name, "Nombre"
+        = f.text_field :name
+      .field
+        = f.label :short_description, "Descripcion corta"
+        = f.text_area :short_description
+      .field
+        = f.label :description, "Descripcion"
+        = f.text_area :description
+      .field
+        = f.label :start_date , "Fecha Comienzo"
+        = f.date_field :start_date
+      .field
+        = f.label :photo, "Foto"
+        = f.file_field :photo
+      .actions
+        = f.submit 'Crear'

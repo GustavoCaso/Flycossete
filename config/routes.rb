@@ -29,6 +29,7 @@ Flycosette::Application.routes.draw do
     get "complementos"
     get "botas"
     get "outlet"
+    get "chaquetas"
   end
 
   get "contact", to: 'static#contact', as: "contact"

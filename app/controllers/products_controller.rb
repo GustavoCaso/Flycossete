@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
   before_action :set_current
+  before_action :set_action, except: [:show]
 
   def index
     @products = Product.all
@@ -15,22 +16,22 @@ class ProductsController < ApplicationController
   end
 
   def faldas
-    @products = Product.all.where(category: "Faldas")
+    @products = Product.all.where(category: "Vestidos/Faldas")
   end
 
   def camisas
     @products = Product.all.where(category: "Camisas")
   end
 
-  def camisetas
-    @products = Product.all.where(category: "Camisetas")
+  def chaquetas
+    @products = Product.all.where(category: "Chaquetas/Blazer")
   end
 
   def complementos
     @products = Product.all.where(category: "Complementos")
   end
 
-  def botas
+  def calzado
     @products = Product.all.where(category: "Botas")
   end
 
@@ -53,6 +54,10 @@ class ProductsController < ApplicationController
 
     def set_current
       @current = true
+    end
+
+    def set_action
+      @action = action_name
     end
 
 

@@ -28,21 +28,20 @@
           .row
             .col-xs-12
               %nav
-                %ul.main-nav
-                  %li
-                    = link_to "Productos","#", class: "heading"
-                    %ul.products{class: @current ? "active" : ""}
-                      %li= link_to "Pantalones", pantalones_path
-                      %li= link_to "Vetsidos/Faldas", faldas_path
-                      %li= link_to "Camisas/Camisetas", camisas_path
-                      %li= link_to "Chaquetas/Blazer", "#"
-                      %li= link_to "Jersey", jersey_path
-                      %li= link_to "Complementos", complementos_path
-                      %li= link_to "Calzado", botas_path
-                      %li= link_to "Outlet", outlet_path
+                %ul.main-nav.clearfix
+                  %li= link_to "Productos","#", class: "heading"
                   %li= link_to "Eventos", events_path, class: @action == "events" ? "current" : ""
                   %li= link_to "Nosotros", us_path, class: @action == "us" ? "current" : ""
                   %li= link_to "Contacta", contact_path, class: @action == "contact" ? "current" : ""
+                %ul.products{class: @current ? "active" : ""}
+                  %li= link_to "Pantalones", pantalones_path, class: @action == "pantalones" ? "current" : ""
+                  %li= link_to "Vetsidos/Faldas", faldas_path, class: @action == "faldas" ? "current" : ""
+                  %li= link_to "Camisas/Camisetas", camisas_path, class: @action == "camisas" ? "current" : ""
+                  %li= link_to "Chaquetas/Blazer", chaquetas_path, class: @action == "chaquetas" ? "current" : ""
+                  %li= link_to "Jersey", jersey_path, class: @action == "jersey" ? "current" : ""
+                  %li= link_to "Complementos", complementos_path, class: @action == "events" ? "current" : ""
+                  %li= link_to "Calzado", botas_path, class: @action == "calzado" ? "current" : ""
+                  %li= link_to "Outlet", outlet_path, class: @action == "outlet" ? "current" : ""
       = yield
     %footer
       Copyright © 2014. All rights reserved

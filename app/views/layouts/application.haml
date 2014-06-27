@@ -32,13 +32,13 @@
                   %li
                     = link_to "Productos","#", class: "heading"
                     %ul.products{class: @current ? "active" : ""}
-                      %li= link_to "Jersey", jersey_path
                       %li= link_to "Pantalones", pantalones_path
-                      %li= link_to "Faldas", faldas_path
-                      %li= link_to "Camisas", camisas_path
-                      %li= link_to "Camisetas", camisetas_path
+                      %li= link_to "Vetsidos/Faldas", faldas_path
+                      %li= link_to "Camisas/Camisetas", camisas_path
+                      %li= link_to "Chaquetas/Blazer", "#"
+                      %li= link_to "Jersey", jersey_path
                       %li= link_to "Complementos", complementos_path
-                      %li= link_to "Botas", botas_path
+                      %li= link_to "Calzado", botas_path
                       %li= link_to "Outlet", outlet_path
                   %li= link_to "Eventos", events_path, class: @action == "events" ? "current" : ""
                   %li= link_to "Nosotros", us_path, class: @action == "us" ? "current" : ""

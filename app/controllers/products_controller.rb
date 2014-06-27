@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     @products = Product.all.where(category: "Complementos")
   end
 
-  def calzado
+  def botas
     @products = Product.all.where(category: "Botas")
   end
 

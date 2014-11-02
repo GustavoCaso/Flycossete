@@ -19,7 +19,7 @@ class Product < ActiveRecord::Base
   validates_presence_of :price, message: "Precio no puede estar en blanco"
   validates_presence_of :size, message: "Talla no puede estar en blanco"
 
-  CATEGORY = ["Jersey", "Pantalones", "Faldas", "Camisas", "Camisetas", "Complementos", "Botas", "Outlet"]
+  CATEGORY = ["Jersey", "Pantalones", "Vestidos/Faldas", "Camisas", "Chaquetas/Blazer", "Complementos", "Botas", "Outlet"]
 
   private
     def ensure_not_referenced_by_any_line_item

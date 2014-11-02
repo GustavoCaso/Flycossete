@@ -35,7 +35,6 @@ html, body
       line-height: 1
 
     header
-      margin-bottom: 66px
       .logo
         width: 364px
         height: 138px
@@ -64,7 +63,6 @@ html, body
             float: left
             font-size: 24px
             text-align: center
-            position: relative
             margin-right: 35px
             a
               color: rgba(125,126,126,1)
@@ -73,20 +71,20 @@ html, body
               display: inline-block
               &:hover
                 @extend .current
-            ul.products
-              margin: 0 auto
-              position: absolute
-              display: none
-              top: 50px
-              list-style-type: none
-              height: 50px
-              background: rgba(246,239,241,1)
-              width: 1170px
-              li
-                font-size: 18px
-                float: left
-                text-align: center
-                line-height: 50px
+        ul.products
+          margin: 0 auto
+          display: none
+          list-style-type: none
+          height: 50px
+          background: rgba(246,239,241,1)
+          width: 100%
+          li
+            font-size: 18px
+            display: inline-block
+            text-align: center
+            line-height: 50px
+            margin-right: 2%
+
 
 
   /* Set the fixed height of the footer here */
